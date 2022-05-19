@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <app-header></app-header>
+  <p>Tutorial</p>
+  <button (click)="testFun('Hello world')"> Click Me for Message</button>
+  <p>Get Text from a box</p>
+  <input type="text" #txt>
+  <button (click)="getTextBoxVal(txt)">Get Value</button> <br><br>
+
+  <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)"> 
+    <input type="text" name="email" ngModel #email> <br> <br>
+    <input type="text" name="address" ngModel #address> <br> <br>
+    <input type="text" name="conctat" ngModel #conctat> <br> <br>
+    <button type="submit" (click)="getVal(email,address,conctat)"> Submit Data</button>
+  </form> <br> <br>
+
+  <app-footer></app-footer>
+</body>
+</html>

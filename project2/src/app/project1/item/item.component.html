@@ -1,0 +1,14 @@
+<p>item works!</p>
+<div class="stock-container" 
+    *ngFor="let stock of stocks; index as i; truckBy : traskStokByCode">
+    <div class="name">
+            {{stock.name}} {{stock.code}}
+    </div>
+    <div class="price" [class]="stock.isPositiveChange() ? 'positive' : 'negative'">
+        $ {{stock.price}}
+    </div>
+    <button *ngIf="!stock.favorite" (click)="toggleFavorite($event,i)" [disabled]="stock.favorite">Add to favorite</button>
+    <button *ngIf="stock.favorite" (click)="toggleFavorite($event,i)">Remove from Favorite </button>
+
+    
+</div>
